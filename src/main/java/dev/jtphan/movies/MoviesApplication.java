@@ -13,7 +13,7 @@ public class MoviesApplication {
 		SpringApplication.run(MoviesApplication.class, args);
 	}
 
-	@GetMapping("/")
+	@GetMapping("/root")
 	//GetMapping annotation lets framework know that it is a GET
 	//endpoint
 	public String apiRoot(){
