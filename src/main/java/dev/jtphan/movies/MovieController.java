@@ -15,7 +15,9 @@ public class MovieController {
     @Autowired
     private MovieService movieService;
     @GetMapping
+    //Getting request from the User and Returning a response
     public ResponseEntity<List<Movie>> allMovies(){
+        //Use MovieService to return all movies from MovieRepository. Then return '200' as HTTP status
        return new ResponseEntity<List<Movie>>(movieService.allMovies(), HttpStatus.OK);
     }
 }
