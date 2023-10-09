@@ -24,12 +24,12 @@ public class MovieController {
        return new ResponseEntity<List<Movie>>(movieService.allMovies(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    //Lets Framework know that we are using Path Variable then converting to an ObjectId called id
-    public ResponseEntity<Optional<Movie>> getSingleMovie(@PathVariable ObjectId id) {
+    @GetMapping("/{imdbId}")
+    //Lets Framework know that we are using Path Variable then converting to String imdbId
+    public ResponseEntity<Optional<Movie>> getSingleMovie(@PathVariable String imdbId) {
 
-        //Return a single movie instance using Path Variable and ObjectId
-        return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(id), HttpStatus.OK);
+        //Return a single movie instance using Path Variable and imdbId
+        return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId), HttpStatus.OK);
 
     }
 

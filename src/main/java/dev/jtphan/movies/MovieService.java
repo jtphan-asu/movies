@@ -18,8 +18,8 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
-    //Return a single movie based on ObjectId in database
-    public Optional<Movie> singleMovie(ObjectId id){
-        return movieRepository.findById(id);
+    //Return a single movie based on imdbId in database
+    public Optional<Movie> singleMovie(String imdbIb){
+        return movieRepository.findMovieByImdbId(imdbIb);
     }
 }
