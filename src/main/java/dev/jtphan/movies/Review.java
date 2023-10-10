@@ -15,4 +15,9 @@ public class Review {
     @Id
     private ObjectId id;
     private String body;
+
+    //Constructor that only takes the body
+    public Review(String body) {
+        this.body = body;
+    }
 }
