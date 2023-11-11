@@ -1,3 +1,42 @@
+
+import logo from './logo.svg';
+import './App.css';
+import api from './api/axiosConfig';
+import {useState, useEffect} from 'react';
+
+function App() {
+
+  const [movies, setMovies] = useState();
+
+
+  const getMovies = async () => {
+
+    try{
+    //Using async function to ensure better user experience
+      //Passing additional path information
+            const response = await api.get("/api/v1/movies");
+            console.log(response.data);
+            setMovies(response.data);
+      } catch(err){
+        console.log(err);
+      }
+  }
+  useEffect(() => {
+      getMovies();
+    },[])
+
+  return (
+    <div className="App">
+
+    </div>
+  );
+}
+
+export default App;
+
+
+
+/*
 import logo from './logo.svg';
 import './App.css';
 
@@ -23,3 +62,4 @@ function App() {
 }
 
 export default App;
+*/
